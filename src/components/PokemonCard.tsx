@@ -1,17 +1,20 @@
-const pokemonList = [
-  {
-    name: "bulbasaur",
-    imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-  },
-  {
-    name: "mew",
-  },
-];
+import { FC } from "react";
 
-const PokemonCard = () => {
-  const pokemon = pokemonList[0];
+
+interface IProps {
+  pokemon: {
+    name: string;
+    imgSrc?: string;
+  }
+}
+
+const PokemonCard: FC<IProps> = ({ pokemon }) => {
+
+  // const pokemon = { name: "mew", imgSrc: null };
   const { name, imgSrc } = pokemon;
+
+  console.log('PROPS : ', pokemon);
+
   return (
     <div>
       <figure>
